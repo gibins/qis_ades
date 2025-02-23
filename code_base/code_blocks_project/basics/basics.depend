@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1740331098 source:d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\main.c
+	<stdio.h>
+	<stdlib.h>
+	"loops.h"
+	"template.h"
+
+1739883833 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loops.c
+	<stdio.h>
+	<stdlib.h>
+
+1739883833 source:d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loops.c
+	<stdio.h>
+	<stdlib.h>
+
+1740332037 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loops.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1740244931 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\template.h
+	<stdio.h>
+	<stdlib.h>
+
