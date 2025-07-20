@@ -378,7 +378,7 @@ void sumofPrimeSeries()
 void checkAmstrong() {
 
   int num, originalNum, remainder, result = 0;
-    printf("Enter a three-digit integer: ");
+    printf("Enter a integer: ");
     scanf("%d", &num);
     originalNum = num;
 

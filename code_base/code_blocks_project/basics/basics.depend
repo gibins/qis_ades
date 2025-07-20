@@ -1,8 +1,15 @@
 # depslib dependency file v1.0
-1740331098 source:d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\main.c
+1740850669 source:d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\main.c
 	<stdio.h>
 	<stdlib.h>
 	"loops.h"
+	"loop2.h"
+	"conditionals.h"
+	"pgm_25022025.h"
+	"pgm_26022025.h"
+	"pgm_27022025.h"
+	"pgm_28022025.h"
+	"pgm_01032025.h"
 	"template.h"
 
 1739883833 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loops.c
@@ -13,12 +20,40 @@
 	<stdio.h>
 	<stdlib.h>
 
-1740332037 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loops.h
+1740404872 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loops.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 
-1740244931 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\template.h
+1740850996 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\template.h
+	<stdio.h>
+	<stdlib.h>
+
+1740372887 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\conditionals.h
+	<stdio.h>
+	<stdlib.h>
+
+1740502795 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\loop2.h
+	<stdio.h>
+	<stdlib.h>
+
+1740575297 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\pgm_25022025.h
+	<stdio.h>
+	<stdlib.h>
+
+1740590863 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\pgm_26022025.h
+	<stdio.h>
+	<stdlib.h>
+
+1740665393 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\pgm_27022025.h
+	<stdio.h>
+	<stdlib.h>
+
+1740755141 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\pgm_28022025.h
+	<stdio.h>
+	<stdlib.h>
+
+1740844188 d:\questcpp\repo\qis_ades\code_base\code_blocks_project\basics\pgm_01032025.h
 	<stdio.h>
 	<stdlib.h>
 

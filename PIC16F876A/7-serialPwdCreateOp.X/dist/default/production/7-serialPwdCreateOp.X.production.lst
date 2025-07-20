@@ -1,0 +1,1762 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Wed May 28 19:55:59 2025
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	16F876A
+     2                           	opt	pw 120
+     3                           	opt	flic
+     4                           	psect	strings,global,class=STRING,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	bssBANK1,global,class=BANK1,space=1,delta=1
+     8                           	psect	clrtext,global,class=CODE,delta=2
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    10                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	psect	text1,local,class=CODE,merge=1,delta=2
+    13                           	psect	text2,local,class=CODE,merge=1,delta=2
+    14                           	psect	text3,local,class=CODE,merge=1,delta=2,group=2
+    15                           	psect	text4,local,class=CODE,merge=1,delta=2,group=2
+    16                           	psect	text5,local,class=CODE,merge=1,delta=2
+    17                           	psect	text6,local,class=CODE,merge=1,delta=2
+    18                           	psect	text7,local,class=CODE,merge=1,delta=2
+    19                           	psect	text8,local,class=CODE,merge=1,delta=2
+    20                           	dabs	1,0x7E,2
+    21  0000                     
+    22                           ; Version 2.10
+    23                           ; Generated 31/07/2019 GMT
+    24                           ; 
+    25                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    26                           ; All rights reserved.
+    27                           ; 
+    28                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    29                           ; 
+    30                           ; Redistribution and use in source and binary forms, with or without modification, are
+    31                           ; permitted provided that the following conditions are met:
+    32                           ; 
+    33                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    34                           ;        conditions and the following disclaimer.
+    35                           ; 
+    36                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    37                           ;        of conditions and the following disclaimer in the documentation and/or other
+    38                           ;        materials provided with the distribution.
+    39                           ; 
+    40                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    41                           ;        software without specific prior written permission.
+    42                           ; 
+    43                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    44                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    45                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    46                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    47                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    48                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    49                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    50                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    51                           ; 
+    52                           ; 
+    53                           ; Code-generator required, PIC16F876A Definitions
+    54                           ; 
+    55                           ; SFR Addresses
+    56  0000                     	;# 
+    57  0001                     	;# 
+    58  0002                     	;# 
+    59  0003                     	;# 
+    60  0004                     	;# 
+    61  0005                     	;# 
+    62  0006                     	;# 
+    63  0007                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000D                     	;# 
+    68  000E                     	;# 
+    69  000E                     	;# 
+    70  000F                     	;# 
+    71  0010                     	;# 
+    72  0011                     	;# 
+    73  0012                     	;# 
+    74  0013                     	;# 
+    75  0014                     	;# 
+    76  0015                     	;# 
+    77  0015                     	;# 
+    78  0016                     	;# 
+    79  0017                     	;# 
+    80  0018                     	;# 
+    81  0019                     	;# 
+    82  001A                     	;# 
+    83  001B                     	;# 
+    84  001B                     	;# 
+    85  001C                     	;# 
+    86  001D                     	;# 
+    87  001E                     	;# 
+    88  001F                     	;# 
+    89  0081                     	;# 
+    90  0085                     	;# 
+    91  0086                     	;# 
+    92  0087                     	;# 
+    93  008C                     	;# 
+    94  008D                     	;# 
+    95  008E                     	;# 
+    96  0091                     	;# 
+    97  0092                     	;# 
+    98  0093                     	;# 
+    99  0094                     	;# 
+   100  0098                     	;# 
+   101  0099                     	;# 
+   102  009C                     	;# 
+   103  009D                     	;# 
+   104  009E                     	;# 
+   105  009F                     	;# 
+   106  010C                     	;# 
+   107  010D                     	;# 
+   108  010E                     	;# 
+   109  010F                     	;# 
+   110  018C                     	;# 
+   111  018D                     	;# 
+   112  0000                     	;# 
+   113  0001                     	;# 
+   114  0002                     	;# 
+   115  0003                     	;# 
+   116  0004                     	;# 
+   117  0005                     	;# 
+   118  0006                     	;# 
+   119  0007                     	;# 
+   120  000A                     	;# 
+   121  000B                     	;# 
+   122  000C                     	;# 
+   123  000D                     	;# 
+   124  000E                     	;# 
+   125  000E                     	;# 
+   126  000F                     	;# 
+   127  0010                     	;# 
+   128  0011                     	;# 
+   129  0012                     	;# 
+   130  0013                     	;# 
+   131  0014                     	;# 
+   132  0015                     	;# 
+   133  0015                     	;# 
+   134  0016                     	;# 
+   135  0017                     	;# 
+   136  0018                     	;# 
+   137  0019                     	;# 
+   138  001A                     	;# 
+   139  001B                     	;# 
+   140  001B                     	;# 
+   141  001C                     	;# 
+   142  001D                     	;# 
+   143  001E                     	;# 
+   144  001F                     	;# 
+   145  0081                     	;# 
+   146  0085                     	;# 
+   147  0086                     	;# 
+   148  0087                     	;# 
+   149  008C                     	;# 
+   150  008D                     	;# 
+   151  008E                     	;# 
+   152  0091                     	;# 
+   153  0092                     	;# 
+   154  0093                     	;# 
+   155  0094                     	;# 
+   156  0098                     	;# 
+   157  0099                     	;# 
+   158  009C                     	;# 
+   159  009D                     	;# 
+   160  009E                     	;# 
+   161  009F                     	;# 
+   162  010C                     	;# 
+   163  010D                     	;# 
+   164  010E                     	;# 
+   165  010F                     	;# 
+   166  018C                     	;# 
+   167  018D                     	;# 
+   168  001A                     _RCREG	set	26
+   169  0019                     _TXREG	set	25
+   170  0018                     _RCSTA	set	24
+   171  0065                     _RCIF	set	101
+   172  0099                     _SPBRG	set	153
+   173  0098                     _TXSTA	set	152
+   174  04C1                     _TRMT	set	1217
+   175                           
+   176                           	psect	strings
+   177  0003                     __pstrings:	
+   178  0003                     stringtab:	
+   179  0003                     __stringtab:	
+   180                           
+   181                           ;	String table - string pointers are 1 byte each
+   182  0003  1BFF               	btfsc	btemp+1,7
+   183  0004  280D               	ljmp	stringcode
+   184  0005  1383               	bcf	3,7
+   185  0006  187F               	btfsc	btemp+1,0
+   186  0007  1783               	bsf	3,7
+   187  0008  0800               	movf	0,w
+   188  0009  0A84               	incf	4,f
+   189  000A  1903               	skipnz
+   190  000B  0AFF               	incf	btemp+1,f
+   191  000C  0008               	return
+   192  000D                     stringcode:	
+   193  000D                     stringdir:	
+   194  000D  3000               	movlw	high stringdir
+   195  000E  008A               	movwf	10
+   196  000F  0804               	movf	4,w
+   197  0010  0A84               	incf	4,f
+   198  0011  0782               	addwf	2,f
+   199  0012                     __stringbase:	
+   200  0012  3400               	retlw	0
+   201  0013                     __end_of__stringtab:	
+   202  0013                     STR_4:	
+   203  0013  340D               	retlw	13
+   204  0014  3420               	retlw	32	;' '
+   205  0015  3455               	retlw	85	;'U'
+   206  0016  346E               	retlw	110	;'n'
+   207  0017  3461               	retlw	97	;'a'
+   208  0018  3462               	retlw	98	;'b'
+   209  0019  346C               	retlw	108	;'l'
+   210  001A  3465               	retlw	101	;'e'
+   211  001B  3420               	retlw	32	;' '
+   212  001C  3474               	retlw	116	;'t'
+   213  001D  346F               	retlw	111	;'o'
+   214  001E  3420               	retlw	32	;' '
+   215  001F  3475               	retlw	117	;'u'
+   216  0020  3470               	retlw	112	;'p'
+   217  0021  3464               	retlw	100	;'d'
+   218  0022  3461               	retlw	97	;'a'
+   219  0023  3474               	retlw	116	;'t'
+   220  0024  3465               	retlw	101	;'e'
+   221  0025  3420               	retlw	32	;' '
+   222  0026  3475               	retlw	117	;'u'
+   223  0027  3473               	retlw	115	;'s'
+   224  0028  3465               	retlw	101	;'e'
+   225  0029  3472               	retlw	114	;'r'
+   226  002A  3420               	retlw	32	;' '
+   227  002B  3470               	retlw	112	;'p'
+   228  002C  3461               	retlw	97	;'a'
+   229  002D  3473               	retlw	115	;'s'
+   230  002E  3473               	retlw	115	;'s'
+   231  002F  3477               	retlw	119	;'w'
+   232  0030  346F               	retlw	111	;'o'
+   233  0031  3472               	retlw	114	;'r'
+   234  0032  3464               	retlw	100	;'d'
+   235  0033  3420               	retlw	32	;' '
+   236  0034  3443               	retlw	67	;'C'
+   237  0035  346F               	retlw	111	;'o'
+   238  0036  346E               	retlw	110	;'n'
+   239  0037  3474               	retlw	116	;'t'
+   240  0038  3461               	retlw	97	;'a'
+   241  0039  3463               	retlw	99	;'c'
+   242  003A  3474               	retlw	116	;'t'
+   243  003B  3420               	retlw	32	;' '
+   244  003C  3473               	retlw	115	;'s'
+   245  003D  3475               	retlw	117	;'u'
+   246  003E  3470               	retlw	112	;'p'
+   247  003F  3470               	retlw	112	;'p'
+   248  0040  346F               	retlw	111	;'o'
+   249  0041  3472               	retlw	114	;'r'
+   250  0042  3474               	retlw	116	;'t'
+   251  0043  3420               	retlw	32	;' '
+   252  0044  340D               	retlw	13
+   253  0045  3400               	retlw	0
+   254  0046                     STR_3:	
+   255  0046  340D               	retlw	13
+   256  0047  3420               	retlw	32	;' '
+   257  0048  3455               	retlw	85	;'U'
+   258  0049  3473               	retlw	115	;'s'
+   259  004A  3465               	retlw	101	;'e'
+   260  004B  3472               	retlw	114	;'r'
+   261  004C  3420               	retlw	32	;' '
+   262  004D  3470               	retlw	112	;'p'
+   263  004E  3461               	retlw	97	;'a'
+   264  004F  3473               	retlw	115	;'s'
+   265  0050  3473               	retlw	115	;'s'
+   266  0051  3477               	retlw	119	;'w'
+   267  0052  346F               	retlw	111	;'o'
+   268  0053  3472               	retlw	114	;'r'
+   269  0054  3464               	retlw	100	;'d'
+   270  0055  3420               	retlw	32	;' '
+   271  0056  3475               	retlw	117	;'u'
+   272  0057  3470               	retlw	112	;'p'
+   273  0058  3464               	retlw	100	;'d'
+   274  0059  3461               	retlw	97	;'a'
+   275  005A  3474               	retlw	116	;'t'
+   276  005B  3465               	retlw	101	;'e'
+   277  005C  3464               	retlw	100	;'d'
+   278  005D  3420               	retlw	32	;' '
+   279  005E  3473               	retlw	115	;'s'
+   280  005F  3475               	retlw	117	;'u'
+   281  0060  3463               	retlw	99	;'c'
+   282  0061  3463               	retlw	99	;'c'
+   283  0062  3465               	retlw	101	;'e'
+   284  0063  3473               	retlw	115	;'s'
+   285  0064  3473               	retlw	115	;'s'
+   286  0065  3466               	retlw	102	;'f'
+   287  0066  3475               	retlw	117	;'u'
+   288  0067  346C               	retlw	108	;'l'
+   289  0068  346C               	retlw	108	;'l'
+   290  0069  3479               	retlw	121	;'y'
+   291  006A  3420               	retlw	32	;' '
+   292  006B  340D               	retlw	13
+   293  006C  3400               	retlw	0
+   294  006D                     STR_10:	
+   295  006D  340D               	retlw	13
+   296  006E  3420               	retlw	32	;' '
+   297  006F  3441               	retlw	65	;'A'
+   298  0070  3475               	retlw	117	;'u'
+   299  0071  3474               	retlw	116	;'t'
+   300  0072  3468               	retlw	104	;'h'
+   301  0073  3465               	retlw	101	;'e'
+   302  0074  346E               	retlw	110	;'n'
+   303  0075  3474               	retlw	116	;'t'
+   304  0076  3469               	retlw	105	;'i'
+   305  0077  3463               	retlw	99	;'c'
+   306  0078  3461               	retlw	97	;'a'
+   307  0079  3474               	retlw	116	;'t'
+   308  007A  3469               	retlw	105	;'i'
+   309  007B  346F               	retlw	111	;'o'
+   310  007C  346E               	retlw	110	;'n'
+   311  007D  3420               	retlw	32	;' '
+   312  007E  3453               	retlw	83	;'S'
+   313  007F  3475               	retlw	117	;'u'
+   314  0080  3463               	retlw	99	;'c'
+   315  0081  3463               	retlw	99	;'c'
+   316  0082  3465               	retlw	101	;'e'
+   317  0083  3473               	retlw	115	;'s'
+   318  0084  3473               	retlw	115	;'s'
+   319  0085  3466               	retlw	102	;'f'
+   320  0086  3475               	retlw	117	;'u'
+   321  0087  346C               	retlw	108	;'l'
+   322  0088  3421               	retlw	33	;'!'
+   323  0089  3421               	retlw	33	;'!'
+   324  008A  3421               	retlw	33	;'!'
+   325  008B  340D               	retlw	13
+   326  008C  3400               	retlw	0
+   327  008D                     STR_11:	
+   328  008D  340D               	retlw	13
+   329  008E  3420               	retlw	32	;' '
+   330  008F  3441               	retlw	65	;'A'
+   331  0090  3475               	retlw	117	;'u'
+   332  0091  3474               	retlw	116	;'t'
+   333  0092  3468               	retlw	104	;'h'
+   334  0093  3465               	retlw	101	;'e'
+   335  0094  346E               	retlw	110	;'n'
+   336  0095  3474               	retlw	116	;'t'
+   337  0096  3469               	retlw	105	;'i'
+   338  0097  3463               	retlw	99	;'c'
+   339  0098  3461               	retlw	97	;'a'
+   340  0099  3474               	retlw	116	;'t'
+   341  009A  3469               	retlw	105	;'i'
+   342  009B  346F               	retlw	111	;'o'
+   343  009C  346E               	retlw	110	;'n'
+   344  009D  3420               	retlw	32	;' '
+   345  009E  3446               	retlw	70	;'F'
+   346  009F  3461               	retlw	97	;'a'
+   347  00A0  3469               	retlw	105	;'i'
+   348  00A1  346C               	retlw	108	;'l'
+   349  00A2  3465               	retlw	101	;'e'
+   350  00A3  3464               	retlw	100	;'d'
+   351  00A4  3421               	retlw	33	;'!'
+   352  00A5  3421               	retlw	33	;'!'
+   353  00A6  3421               	retlw	33	;'!'
+   354  00A7  340D               	retlw	13
+   355  00A8  3400               	retlw	0
+   356  00A9                     STR_2:	
+   357  00A9  340D               	retlw	13
+   358  00AA  3420               	retlw	32	;' '
+   359  00AB  3445               	retlw	69	;'E'
+   360  00AC  346E               	retlw	110	;'n'
+   361  00AD  3474               	retlw	116	;'t'
+   362  00AE  3465               	retlw	101	;'e'
+   363  00AF  3472               	retlw	114	;'r'
+   364  00B0  3420               	retlw	32	;' '
+   365  00B1  344E               	retlw	78	;'N'
+   366  00B2  3465               	retlw	101	;'e'
+   367  00B3  3477               	retlw	119	;'w'
+   368  00B4  3420               	retlw	32	;' '
+   369  00B5  3450               	retlw	80	;'P'
+   370  00B6  3461               	retlw	97	;'a'
+   371  00B7  3473               	retlw	115	;'s'
+   372  00B8  3473               	retlw	115	;'s'
+   373  00B9  3477               	retlw	119	;'w'
+   374  00BA  346F               	retlw	111	;'o'
+   375  00BB  3472               	retlw	114	;'r'
+   376  00BC  3464               	retlw	100	;'d'
+   377  00BD  3420               	retlw	32	;' '
+   378  00BE  340D               	retlw	13
+   379  00BF  3400               	retlw	0
+   380  00C0                     STR_14:	
+   381  00C0  340D               	retlw	13
+   382  00C1  3420               	retlw	32	;' '
+   383  00C2  3445               	retlw	69	;'E'
+   384  00C3  346E               	retlw	110	;'n'
+   385  00C4  3474               	retlw	116	;'t'
+   386  00C5  3465               	retlw	101	;'e'
+   387  00C6  3472               	retlw	114	;'r'
+   388  00C7  3420               	retlw	32	;' '
+   389  00C8  3450               	retlw	80	;'P'
+   390  00C9  3461               	retlw	97	;'a'
+   391  00CA  3473               	retlw	115	;'s'
+   392  00CB  3473               	retlw	115	;'s'
+   393  00CC  3477               	retlw	119	;'w'
+   394  00CD  346F               	retlw	111	;'o'
+   395  00CE  3472               	retlw	114	;'r'
+   396  00CF  3464               	retlw	100	;'d'
+   397  00D0  3420               	retlw	32	;' '
+   398  00D1  340D               	retlw	13
+   399  00D2  3400               	retlw	0
+   400  00D3                     STR_6:	
+   401  00D3  340D               	retlw	13
+   402  00D4  3420               	retlw	32	;' '
+   403  00D5  3450               	retlw	80	;'P'
+   404  00D6  3461               	retlw	97	;'a'
+   405  00D7  3473               	retlw	115	;'s'
+   406  00D8  3473               	retlw	115	;'s'
+   407  00D9  3477               	retlw	119	;'w'
+   408  00DA  346F               	retlw	111	;'o'
+   409  00DB  3472               	retlw	114	;'r'
+   410  00DC  3464               	retlw	100	;'d'
+   411  00DD  3420               	retlw	32	;' '
+   412  00DE  3448               	retlw	72	;'H'
+   413  00DF  3469               	retlw	105	;'i'
+   414  00E0  346E               	retlw	110	;'n'
+   415  00E1  3474               	retlw	116	;'t'
+   416  00E2  3420               	retlw	32	;' '
+   417  00E3  3400               	retlw	0
+   418  00E4                     STR_5:	
+   419  00E4  340D               	retlw	13
+   420  00E5  3420               	retlw	32	;' '
+   421  00E6  3452               	retlw	82	;'R'
+   422  00E7  3465               	retlw	101	;'e'
+   423  00E8  3473               	retlw	115	;'s'
+   424  00E9  3465               	retlw	101	;'e'
+   425  00EA  3474               	retlw	116	;'t'
+   426  00EB  3420               	retlw	32	;' '
+   427  00EC  344D               	retlw	77	;'M'
+   428  00ED  346F               	retlw	111	;'o'
+   429  00EE  3464               	retlw	100	;'d'
+   430  00EF  3465               	retlw	101	;'e'
+   431  00F0  3420               	retlw	32	;' '
+   432  00F1  3400               	retlw	0
+   433  00F2                     STR_7:	
+   434  00F2  3431               	retlw	49	;'1'
+   435  00F3  3432               	retlw	50	;'2'
+   436  00F4  3433               	retlw	51	;'3'
+   437  00F5  3434               	retlw	52	;'4'
+   438  00F6  3435               	retlw	53	;'5'
+   439  00F7  3436               	retlw	54	;'6'
+   440  00F8  3400               	retlw	0
+   441  00F9                     STR_1:	
+   442  00F9  342A               	retlw	42	;'*'
+   443  00FA  3400               	retlw	0
+   444  00D2                     
+   445                           ; #config settings
+   446  0000                     
+   447                           	psect	cinit
+   448  07EF                     start_initialization:	
+   449  07EF                     __initialization:	
+   450                           
+   451                           ; Clear objects allocated to BANK0
+   452  07EF  1283               	bcf	3,5	;RP0=0, select bank0
+   453  07F0  1303               	bcf	3,6	;RP1=0, select bank0
+   454  07F1  01C8               	clrf	__pbssBANK0& (0+127)
+   455  07F2  01C9               	clrf	(__pbssBANK0+1)& (0+127)
+   456                           
+   457                           ; Clear objects allocated to BANK1
+   458  07F3  1383               	bcf	3,7	;select IRP bank0
+   459  07F4  30A0               	movlw	low __pbssBANK1
+   460  07F5  0084               	movwf	4
+   461  07F6  30C8               	movlw	low (__pbssBANK1+40)
+   462  07F7  120A  118A  262D  120A  118A  	fcall	clear_ram0
+   463  07FC                     end_of_initialization:	
+   464                           ;End of C runtime variable initialization code
+   465                           
+   466  07FC                     __end_of__initialization:	
+   467  07FC  0183               	clrf	3
+   468  07FD  120A  118A  2E5B   	ljmp	_main	;jump to C main() function
+   469                           
+   470                           	psect	bssBANK0
+   471  0048                     __pbssBANK0:	
+   472  0048                     _resetMode:	
+   473  0048                     	ds	2
+   474                           
+   475                           	psect	bssBANK1
+   476  00A0                     __pbssBANK1:	
+   477  00A0                     _userPassword:	
+   478  00A0                     	ds	40
+   479                           
+   480                           	psect	clrtext
+   481  062D                     clear_ram0:	
+   482                           ;	Called with FSR containing the base address, and
+   483                           ;	W with the last address+1
+   484                           
+   485  062D  0064               	clrwdt	;clear the watchdog before getting into this loop
+   486  062E                     clrloop0:	
+   487  062E  0180               	clrf	0	;clear RAM location pointed to by FSR
+   488  062F  0A84               	incf	4,f	;increment pointer
+   489  0630  0604               	xorwf	4,w	;XOR with final address
+   490  0631  1903               	btfsc	3,2	;have we reached the end yet?
+   491  0632  3400               	retlw	0	;all done for this memory range, return
+   492  0633  0604               	xorwf	4,w	;XOR again to restore value
+   493  0634  2E2E               	goto	clrloop0	;do the next byte
+   494                           
+   495                           	psect	cstackCOMMON
+   496  0070                     __pcstackCOMMON:	
+   497  0070                     ?_configRegistres:	
+   498  0070                     ??_configRegistres:	
+   499                           ; 1 bytes @ 0x0
+   500                           
+   501  0070                     ?_receiveCharacter:	
+   502                           ; 1 bytes @ 0x0
+   503                           
+   504  0070                     ??_receiveCharacter:	
+   505                           ; 1 bytes @ 0x0
+   506                           
+   507  0070                     ?_readMessage:	
+   508                           ; 1 bytes @ 0x0
+   509                           
+   510  0070                     ?_createPassword:	
+   511                           ; 1 bytes @ 0x0
+   512                           
+   513  0070                     ?_validatePassword:	
+   514                           ; 1 bytes @ 0x0
+   515                           
+   516  0070                     ?_main:	
+   517                           ; 1 bytes @ 0x0
+   518                           
+   519  0070                     ?_strlen:	
+   520                           ; 1 bytes @ 0x0
+   521                           
+   522  0070                     ?_strcmp:	
+   523                           ; 2 bytes @ 0x0
+   524                           
+   525  0070                     strcmp@s2:	
+   526                           ; 2 bytes @ 0x0
+   527                           
+   528                           
+   529                           ; 2 bytes @ 0x0
+   530  0070                     	ds	2
+   531  0072                     ??_strlen:	
+   532  0072                     ??_strcmp:	
+   533                           ; 1 bytes @ 0x2
+   534                           
+   535                           
+   536                           ; 1 bytes @ 0x2
+   537  0072                     	ds	1
+   538  0073                     strlen@cp:	
+   539                           
+   540                           ; 1 bytes @ 0x3
+   541  0073                     	ds	1
+   542  0074                     strlen@s:	
+   543                           
+   544                           ; 1 bytes @ 0x4
+   545  0074                     	ds	1
+   546  0075                     ?_printMessage:	
+   547  0075                     strcmp@r:	
+   548                           ; 1 bytes @ 0x5
+   549                           
+   550  0075                     printMessage@message:	
+   551                           ; 1 bytes @ 0x5
+   552                           
+   553                           
+   554                           ; 2 bytes @ 0x5
+   555  0075                     	ds	1
+   556  0076                     strcmp@s1:	
+   557                           
+   558                           ; 1 bytes @ 0x6
+   559  0076                     	ds	1
+   560  0077                     ??_printMessage:	
+   561  0077                     printMessage@i:	
+   562                           ; 1 bytes @ 0x7
+   563                           
+   564                           
+   565                           ; 2 bytes @ 0x7
+   566  0077                     	ds	2
+   567  0079                     ??_readMessage:	
+   568  0079                     ??_validatePassword:	
+   569                           ; 1 bytes @ 0x9
+   570                           
+   571                           
+   572                           ; 1 bytes @ 0x9
+   573  0079                     	ds	1
+   574  007A                     validatePassword@stockPassword:	
+   575                           
+   576                           ; 1 bytes @ 0xA
+   577  007A                     	ds	1
+   578  007B                     validatePassword@password:	
+   579  007B                     readMessage@i:	
+   580                           ; 1 bytes @ 0xB
+   581                           
+   582                           
+   583                           ; 2 bytes @ 0xB
+   584  007B                     	ds	2
+   585  007D                     readMessage@message:	
+   586                           
+   587                           ; 1 bytes @ 0xD
+   588  007D                     	ds	1
+   589  007E                     ??_createPassword:	
+   590  007E                     ??_main:	
+   591                           ; 1 bytes @ 0xE
+   592                           
+   593                           
+   594                           	psect	cstackBANK0
+   595  0020                     __pcstackBANK0:	
+   596                           ; 1 bytes @ 0xE
+   597                           
+   598  0020                     main@serialBuffer:	
+   599                           
+   600                           ; 40 bytes @ 0x0
+   601  0020                     	ds	40
+   602                           
+   603                           	psect	maintext
+   604  065B                     __pmaintext:	
+   605 ;;
+   606 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   607 ;;
+   608 ;; *************** function _main *****************
+   609 ;; Defined at:
+   610 ;;		line 114 in file "serialPwdCreateOpt.c"
+   611 ;; Parameters:    Size  Location     Type
+   612 ;;		None
+   613 ;; Auto vars:     Size  Location     Type
+   614 ;;  serialBuffer   40    0[BANK0 ] PTR unsigned char [40]
+   615 ;; Return value:  Size  Location     Type
+   616 ;;                  1    wreg      void 
+   617 ;; Registers used:
+   618 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   619 ;; Tracked objects:
+   620 ;;		On entry : B00/0
+   621 ;;		On exit  : 0/0
+   622 ;;		Unchanged: 0/0
+   623 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   624 ;;      Params:         0       0       0       0       0
+   625 ;;      Locals:         0      40       0       0       0
+   626 ;;      Temps:          0       0       0       0       0
+   627 ;;      Totals:         0      40       0       0       0
+   628 ;;Total ram usage:       40 bytes
+   629 ;; Hardware stack levels required when called:    4
+   630 ;; This function calls:
+   631 ;;		_configRegistres
+   632 ;;		_createPassword
+   633 ;;		_printMessage
+   634 ;;		_readMessage
+   635 ;;		_validatePassword
+   636 ;; This function is called by:
+   637 ;;		Startup code after reset
+   638 ;; This function uses a non-reentrant model
+   639 ;;
+   640                           
+   641                           
+   642                           ;psect for function _main
+   643  065B                     _main:	
+   644  065B                     l833:	
+   645                           ;incstack = 0
+   646                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   647                           
+   648                           
+   649                           ;serialPwdCreateOpt.c: 116:     char *serialBuffer[40];;serialPwdCreateOpt.c: 118:     c
+      +                          onfigRegistres();
+   650  065B  120A  118A  2635  120A  118A  	fcall	_configRegistres
+   651  0660                     l835:	
+   652                           
+   653                           ;serialPwdCreateOpt.c: 119:     if(resetMode == 0) {
+   654  0660  1283               	bcf	3,5	;RP0=0, select bank0
+   655  0661  1303               	bcf	3,6	;RP1=0, select bank0
+   656  0662  0848               	movf	_resetMode,w
+   657  0663  0449               	iorwf	_resetMode+1,w
+   658  0664  1D03               	btfss	3,2
+   659  0665  2E67               	goto	u261
+   660  0666  2E68               	goto	u260
+   661  0667                     u261:	
+   662  0667  2E6D               	goto	l66
+   663  0668                     u260:	
+   664  0668                     l837:	
+   665                           
+   666                           ;serialPwdCreateOpt.c: 120:     createPassword();}
+   667  0668  120A  118A  277E  120A  118A  	fcall	_createPassword
+   668  066D                     l66:	
+   669                           
+   670                           ;serialPwdCreateOpt.c: 122:     printMessage("\r Enter Password \r");
+   671  066D  30AE               	movlw	(low ((STR_14-__stringbase)| (0+32768)))& (0+255)
+   672  066E  00F5               	movwf	printMessage@message
+   673  066F  3080               	movlw	128
+   674  0670  00F6               	movwf	printMessage@message+1
+   675  0671  120A  118A  2685  120A  118A  	fcall	_printMessage
+   676                           
+   677                           ;serialPwdCreateOpt.c: 123:     readMessage(serialBuffer);
+   678  0676  3020               	movlw	(low (main@serialBuffer| 0))& (0+255)
+   679  0677  120A  118A  26B7  120A  118A  	fcall	_readMessage
+   680                           
+   681                           ;serialPwdCreateOpt.c: 125:     validatePassword(serialBuffer);
+   682  067C  3020               	movlw	(low (main@serialBuffer| 0))& (0+255)
+   683  067D  120A  118A  271F  120A  118A  	fcall	_validatePassword
+   684  0682                     l67:	
+   685  0682  120A  118A  2800   	ljmp	start
+   686  0685                     __end_of_main:	
+   687                           
+   688                           	psect	text1
+   689  071F                     __ptext1:	
+   690 ;; *************** function _validatePassword *****************
+   691 ;; Defined at:
+   692 ;;		line 91 in file "serialPwdCreateOpt.c"
+   693 ;; Parameters:    Size  Location     Type
+   694 ;;  password        1    wreg     PTR unsigned char 
+   695 ;;		 -> main@serialBuffer(40), 
+   696 ;; Auto vars:     Size  Location     Type
+   697 ;;  password        1   11[COMMON] PTR unsigned char 
+   698 ;;		 -> main@serialBuffer(40), 
+   699 ;;  stockPasswor    1   10[COMMON] PTR unsigned char 
+   700 ;;		 -> STR_7(7), 
+   701 ;; Return value:  Size  Location     Type
+   702 ;;                  1    wreg      void 
+   703 ;; Registers used:
+   704 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   705 ;; Tracked objects:
+   706 ;;		On entry : 0/0
+   707 ;;		On exit  : 0/0
+   708 ;;		Unchanged: 0/0
+   709 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   710 ;;      Params:         0       0       0       0       0
+   711 ;;      Locals:         2       0       0       0       0
+   712 ;;      Temps:          1       0       0       0       0
+   713 ;;      Totals:         3       0       0       0       0
+   714 ;;Total ram usage:        3 bytes
+   715 ;; Hardware stack levels used:    1
+   716 ;; Hardware stack levels required when called:    2
+   717 ;; This function calls:
+   718 ;;		_printMessage
+   719 ;;		_strcmp
+   720 ;; This function is called by:
+   721 ;;		_main
+   722 ;; This function uses a non-reentrant model
+   723 ;;
+   724                           
+   725                           
+   726                           ;psect for function _validatePassword
+   727  071F                     _validatePassword:	
+   728                           
+   729                           ;incstack = 0
+   730                           ; Regs used in _validatePassword: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   731                           ;validatePassword@password stored from wreg
+   732  071F  00FB               	movwf	validatePassword@password
+   733  0720                     l817:	
+   734                           
+   735                           ;serialPwdCreateOpt.c: 92:     char *stockPassword = "123456";
+   736  0720  30E0               	movlw	(low ((STR_7-__stringbase)| (0+32768)))& (0+255)
+   737  0721  00F9               	movwf	??_validatePassword
+   738  0722  0879               	movf	??_validatePassword,w
+   739  0723  00FA               	movwf	validatePassword@stockPassword
+   740  0724                     l819:	
+   741                           
+   742                           ;serialPwdCreateOpt.c: 97:     if (!strcmp(userPassword, "")) {
+   743  0724  30C0               	movlw	(low (((STR_14+18)-__stringbase)| (0+32768)))& (0+255)
+   744  0725  00F0               	movwf	strcmp@s2
+   745  0726  3080               	movlw	128
+   746  0727  00F1               	movwf	strcmp@s2+1
+   747  0728  30A0               	movlw	(low (_userPassword| 0))& (0+255)
+   748  0729  120A  118A  26EB  120A  118A  	fcall	_strcmp
+   749  072E  0870               	movf	?_strcmp,w
+   750  072F  0471               	iorwf	?_strcmp+1,w
+   751  0730  1D03               	btfss	3,2
+   752  0731  2F33               	goto	u231
+   753  0732  2F34               	goto	u230
+   754  0733                     u231:	
+   755  0733  2F5A               	goto	l827
+   756  0734                     u230:	
+   757  0734                     l821:	
+   758                           
+   759                           ;serialPwdCreateOpt.c: 99:         if (!strcmp(password, stockPassword)) {
+   760  0734  087A               	movf	validatePassword@stockPassword,w
+   761  0735  00F0               	movwf	strcmp@s2
+   762  0736  3000               	movlw	0
+   763  0737  1D03               	btfss	3,2
+   764  0738  3080               	movlw	128
+   765  0739  00F1               	movwf	strcmp@s2+1
+   766  073A  087B               	movf	validatePassword@password,w
+   767  073B  120A  118A  26EB  120A  118A  	fcall	_strcmp
+   768  0740  0870               	movf	?_strcmp,w
+   769  0741  0471               	iorwf	?_strcmp+1,w
+   770  0742  1D03               	btfss	3,2
+   771  0743  2F45               	goto	u241
+   772  0744  2F46               	goto	u240
+   773  0745                     u241:	
+   774  0745  2F50               	goto	l825
+   775  0746                     u240:	
+   776  0746                     l823:	
+   777                           
+   778                           ;serialPwdCreateOpt.c: 100:             printMessage("\r Authentication Successful!!!\r"
+      +                          );
+   779  0746  305B               	movlw	(low ((STR_10-__stringbase)| (0+32768)))& (0+255)
+   780  0747  00F5               	movwf	printMessage@message
+   781  0748  3080               	movlw	128
+   782  0749  00F6               	movwf	printMessage@message+1
+   783  074A  120A  118A  2685  120A  118A  	fcall	_printMessage
+   784                           
+   785                           ;serialPwdCreateOpt.c: 101:         } else {
+   786  074F  2F7D               	goto	l61
+   787  0750                     l825:	
+   788                           
+   789                           ;serialPwdCreateOpt.c: 102:             printMessage("\r Authentication Failed!!!\r");
+   790  0750  307B               	movlw	(low ((STR_11-__stringbase)| (0+32768)))& (0+255)
+   791  0751  00F5               	movwf	printMessage@message
+   792  0752  3080               	movlw	128
+   793  0753  00F6               	movwf	printMessage@message+1
+   794  0754  120A  118A  2685  120A  118A  	fcall	_printMessage
+   795  0759  2F7D               	goto	l61
+   796  075A                     l827:	
+   797                           
+   798                           ;serialPwdCreateOpt.c: 105:         if (!strcmp(password, userPassword)) {
+   799  075A  30A0               	movlw	(low (_userPassword| 0))& (0+255)
+   800  075B  00F0               	movwf	strcmp@s2
+   801  075C  3000               	movlw	0
+   802  075D  00F1               	movwf	strcmp@s2+1
+   803  075E  087B               	movf	validatePassword@password,w
+   804  075F  120A  118A  26EB  120A  118A  	fcall	_strcmp
+   805  0764  0870               	movf	?_strcmp,w
+   806  0765  0471               	iorwf	?_strcmp+1,w
+   807  0766  1D03               	btfss	3,2
+   808  0767  2F69               	goto	u251
+   809  0768  2F6A               	goto	u250
+   810  0769                     u251:	
+   811  0769  2F74               	goto	l831
+   812  076A                     u250:	
+   813  076A                     l829:	
+   814                           
+   815                           ;serialPwdCreateOpt.c: 106:             printMessage("\r Authentication Successful!!!\r"
+      +                          );
+   816  076A  305B               	movlw	(low ((STR_10-__stringbase)| (0+32768)))& (0+255)
+   817  076B  00F5               	movwf	printMessage@message
+   818  076C  3080               	movlw	128
+   819  076D  00F6               	movwf	printMessage@message+1
+   820  076E  120A  118A  2685  120A  118A  	fcall	_printMessage
+   821                           
+   822                           ;serialPwdCreateOpt.c: 107:         } else {
+   823  0773  2F7D               	goto	l61
+   824  0774                     l831:	
+   825                           
+   826                           ;serialPwdCreateOpt.c: 108:             printMessage("\r Authentication Failed!!!\r");
+   827  0774  307B               	movlw	(low ((STR_11-__stringbase)| (0+32768)))& (0+255)
+   828  0775  00F5               	movwf	printMessage@message
+   829  0776  3080               	movlw	128
+   830  0777  00F6               	movwf	printMessage@message+1
+   831  0778  120A  118A  2685  120A  118A  	fcall	_printMessage
+   832  077D                     l61:	
+   833  077D  0008               	return
+   834  077E                     __end_of_validatePassword:	
+   835                           
+   836                           	psect	text2
+   837  077E                     __ptext2:	
+   838 ;; *************** function _createPassword *****************
+   839 ;; Defined at:
+   840 ;;		line 72 in file "serialPwdCreateOpt.c"
+   841 ;; Parameters:    Size  Location     Type
+   842 ;;		None
+   843 ;; Auto vars:     Size  Location     Type
+   844 ;;		None
+   845 ;; Return value:  Size  Location     Type
+   846 ;;                  1    wreg      void 
+   847 ;; Registers used:
+   848 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   849 ;; Tracked objects:
+   850 ;;		On entry : 0/0
+   851 ;;		On exit  : 0/0
+   852 ;;		Unchanged: 0/0
+   853 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   854 ;;      Params:         0       0       0       0       0
+   855 ;;      Locals:         0       0       0       0       0
+   856 ;;      Temps:          0       0       0       0       0
+   857 ;;      Totals:         0       0       0       0       0
+   858 ;;Total ram usage:        0 bytes
+   859 ;; Hardware stack levels used:    1
+   860 ;; Hardware stack levels required when called:    3
+   861 ;; This function calls:
+   862 ;;		_printMessage
+   863 ;;		_readMessage
+   864 ;;		_strcmp
+   865 ;;		_strlen
+   866 ;; This function is called by:
+   867 ;;		_main
+   868 ;; This function uses a non-reentrant model
+   869 ;;
+   870                           
+   871                           
+   872                           ;psect for function _createPassword
+   873  077E                     _createPassword:	
+   874  077E                     l807:	
+   875                           ;incstack = 0
+   876                           ; Regs used in _createPassword: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   877                           
+   878                           
+   879                           ;serialPwdCreateOpt.c: 74:     if (strlen(userPassword) == 0 ) {
+   880  077E  30A0               	movlw	(low (_userPassword| 0))& (0+255)
+   881  077F  120A  118A  2642  120A  118A  	fcall	_strlen
+   882  0784  0870               	movf	?_strlen,w
+   883  0785  0471               	iorwf	?_strlen+1,w
+   884  0786  1D03               	btfss	3,2
+   885  0787  2F89               	goto	u211
+   886  0788  2F8A               	goto	u210
+   887  0789                     u211:	
+   888  0789  2FC2               	goto	l49
+   889  078A                     u210:	
+   890  078A                     l809:	
+   891                           
+   892                           ;serialPwdCreateOpt.c: 75:         printMessage("\r Enter New Password \r");
+   893  078A  3097               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
+   894  078B  00F5               	movwf	printMessage@message
+   895  078C  3080               	movlw	128
+   896  078D  00F6               	movwf	printMessage@message+1
+   897  078E  120A  118A  2685  120A  118A  	fcall	_printMessage
+   898                           
+   899                           ;serialPwdCreateOpt.c: 76:         readMessage(userPassword);
+   900  0793  30A0               	movlw	(low (_userPassword| 0))& (0+255)
+   901  0794  120A  118A  26B7  120A  118A  	fcall	_readMessage
+   902                           
+   903                           ;serialPwdCreateOpt.c: 78:         if (strcmp(userPassword, (0))) {
+   904  0799  3000               	movlw	0
+   905  079A  00F0               	movwf	strcmp@s2
+   906  079B  3000               	movlw	0
+   907  079C  00F1               	movwf	strcmp@s2+1
+   908  079D  30A0               	movlw	(low (_userPassword| 0))& (0+255)
+   909  079E  120A  118A  26EB  120A  118A  	fcall	_strcmp
+   910  07A3  0870               	movf	?_strcmp,w
+   911  07A4  0471               	iorwf	?_strcmp+1,w
+   912  07A5  1903               	btfsc	3,2
+   913  07A6  2FA8               	goto	u221
+   914  07A7  2FA9               	goto	u220
+   915  07A8                     u221:	
+   916  07A8  2FB9               	goto	l815
+   917  07A9                     u220:	
+   918  07A9                     l811:	
+   919                           
+   920                           ;serialPwdCreateOpt.c: 79:            resetMode = 1;
+   921  07A9  3001               	movlw	1
+   922  07AA  1283               	bcf	3,5	;RP0=0, select bank0
+   923  07AB  1303               	bcf	3,6	;RP1=0, select bank0
+   924  07AC  00C8               	movwf	_resetMode
+   925  07AD  3000               	movlw	0
+   926  07AE  00C9               	movwf	_resetMode+1
+   927  07AF                     l813:	
+   928                           
+   929                           ;serialPwdCreateOpt.c: 80:             printMessage("\r User password updated successful
+      +                          ly \r");
+   930  07AF  3034               	movlw	(low ((STR_3-__stringbase)| (0+32768)))& (0+255)
+   931  07B0  00F5               	movwf	printMessage@message
+   932  07B1  3080               	movlw	128
+   933  07B2  00F6               	movwf	printMessage@message+1
+   934  07B3  120A  118A  2685  120A  118A  	fcall	_printMessage
+   935                           
+   936                           ;serialPwdCreateOpt.c: 81:         } else {
+   937  07B8  2FC2               	goto	l49
+   938  07B9                     l815:	
+   939                           
+   940                           ;serialPwdCreateOpt.c: 82:             printMessage("\r Unable to update user password C
+      +                          ontact support \r");
+   941  07B9  3001               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+   942  07BA  00F5               	movwf	printMessage@message
+   943  07BB  3080               	movlw	128
+   944  07BC  00F6               	movwf	printMessage@message+1
+   945  07BD  120A  118A  2685  120A  118A  	fcall	_printMessage
+   946  07C2                     l49:	
+   947                           ;serialPwdCreateOpt.c: 84:     }
+   948                           
+   949                           
+   950                           ;serialPwdCreateOpt.c: 85:     printMessage("\r Reset Mode ");
+   951  07C2  30D2               	movlw	(low ((STR_5-__stringbase)| (0+32768)))& (0+255)
+   952  07C3  00F5               	movwf	printMessage@message
+   953  07C4  3080               	movlw	128
+   954  07C5  00F6               	movwf	printMessage@message+1
+   955  07C6  120A  118A  2685  120A  118A  	fcall	_printMessage
+   956                           
+   957                           ;serialPwdCreateOpt.c: 86:     printMessage(resetMode);
+   958  07CB  1283               	bcf	3,5	;RP0=0, select bank0
+   959  07CC  1303               	bcf	3,6	;RP1=0, select bank0
+   960  07CD  0848               	movf	_resetMode,w
+   961  07CE  00F5               	movwf	printMessage@message
+   962  07CF  0849               	movf	_resetMode+1,w
+   963  07D0  00F6               	movwf	printMessage@message+1
+   964  07D1  120A  118A  2685  120A  118A  	fcall	_printMessage
+   965                           
+   966                           ;serialPwdCreateOpt.c: 87:     printMessage("\r Password Hint ");
+   967  07D6  30C1               	movlw	(low ((STR_6-__stringbase)| (0+32768)))& (0+255)
+   968  07D7  00F5               	movwf	printMessage@message
+   969  07D8  3080               	movlw	128
+   970  07D9  00F6               	movwf	printMessage@message+1
+   971  07DA  120A  118A  2685  120A  118A  	fcall	_printMessage
+   972                           
+   973                           ;serialPwdCreateOpt.c: 88:     printMessage(strlen(userPassword));
+   974  07DF  30A0               	movlw	(low (_userPassword| 0))& (0+255)
+   975  07E0  120A  118A  2642  120A  118A  	fcall	_strlen
+   976  07E5  0870               	movf	?_strlen,w
+   977  07E6  00F5               	movwf	printMessage@message
+   978  07E7  0871               	movf	?_strlen+1,w
+   979  07E8  00F6               	movwf	printMessage@message+1
+   980  07E9  120A  118A  2685  120A  118A  	fcall	_printMessage
+   981  07EE                     l52:	
+   982  07EE  0008               	return
+   983  07EF                     __end_of_createPassword:	
+   984                           
+   985                           	psect	text3
+   986  0642                     __ptext3:	
+   987 ;; *************** function _strlen *****************
+   988 ;; Defined at:
+   989 ;;		line 4 in file "D:\pic\sources\c90\common\strlen.c"
+   990 ;; Parameters:    Size  Location     Type
+   991 ;;  s               1    wreg     PTR const unsigned char 
+   992 ;;		 -> userPassword(40), 
+   993 ;; Auto vars:     Size  Location     Type
+   994 ;;  s               1    4[COMMON] PTR const unsigned char 
+   995 ;;		 -> userPassword(40), 
+   996 ;;  cp              1    3[COMMON] PTR const unsigned char 
+   997 ;;		 -> userPassword(40), 
+   998 ;; Return value:  Size  Location     Type
+   999 ;;                  2    0[COMMON] unsigned int 
+  1000 ;; Registers used:
+  1001 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1002 ;; Tracked objects:
+  1003 ;;		On entry : 0/0
+  1004 ;;		On exit  : 0/0
+  1005 ;;		Unchanged: 0/0
+  1006 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1007 ;;      Params:         2       0       0       0       0
+  1008 ;;      Locals:         2       0       0       0       0
+  1009 ;;      Temps:          1       0       0       0       0
+  1010 ;;      Totals:         5       0       0       0       0
+  1011 ;;Total ram usage:        5 bytes
+  1012 ;; Hardware stack levels used:    1
+  1013 ;; This function calls:
+  1014 ;;		Nothing
+  1015 ;; This function is called by:
+  1016 ;;		_createPassword
+  1017 ;; This function uses a non-reentrant model
+  1018 ;;
+  1019                           
+  1020                           
+  1021                           ;psect for function _strlen
+  1022  0642                     _strlen:	
+  1023                           
+  1024                           ;incstack = 0
+  1025                           ; Regs used in _strlen: [wreg-fsr0h+status,2+status,0]
+  1026                           ;strlen@s stored from wreg
+  1027  0642  00F4               	movwf	strlen@s
+  1028  0643                     l783:	
+  1029  0643  0874               	movf	strlen@s,w
+  1030  0644  00F2               	movwf	??_strlen
+  1031  0645  0872               	movf	??_strlen,w
+  1032  0646  00F3               	movwf	strlen@cp
+  1033  0647  2E4C               	goto	l787
+  1034  0648                     l785:	
+  1035  0648  3001               	movlw	1
+  1036  0649  00F2               	movwf	??_strlen
+  1037  064A  0872               	movf	??_strlen,w
+  1038  064B  07F3               	addwf	strlen@cp,f
+  1039  064C                     l787:	
+  1040  064C  0873               	movf	strlen@cp,w
+  1041  064D  0084               	movwf	4
+  1042  064E  1383               	bcf	3,7	;select IRP bank0
+  1043  064F  0800               	movf	0,w
+  1044  0650  1D03               	btfss	3,2
+  1045  0651  2E53               	goto	u181
+  1046  0652  2E54               	goto	u180
+  1047  0653                     u181:	
+  1048  0653  2E48               	goto	l785
+  1049  0654                     u180:	
+  1050  0654                     l789:	
+  1051  0654  0874               	movf	strlen@s,w
+  1052  0655  0273               	subwf	strlen@cp,w
+  1053  0656  00F0               	movwf	?_strlen
+  1054  0657  01F1               	clrf	?_strlen+1
+  1055  0658  1BF0               	btfsc	?_strlen,7
+  1056  0659  03F1               	decf	?_strlen+1,f
+  1057  065A                     l609:	
+  1058  065A  0008               	return
+  1059  065B                     __end_of_strlen:	
+  1060                           
+  1061                           	psect	text4
+  1062  06EB                     __ptext4:	
+  1063 ;; *************** function _strcmp *****************
+  1064 ;; Defined at:
+  1065 ;;		line 33 in file "D:\pic\sources\c90\common\strcmp.c"
+  1066 ;; Parameters:    Size  Location     Type
+  1067 ;;  s1              1    wreg     PTR const unsigned char 
+  1068 ;;		 -> main@serialBuffer(40), userPassword(40), 
+  1069 ;;  s2              2    0[COMMON] PTR const unsigned char 
+  1070 ;;		 -> STR_9(1), STR_7(7), NULL(0), userPassword(40), 
+  1071 ;; Auto vars:     Size  Location     Type
+  1072 ;;  s1              1    6[COMMON] PTR const unsigned char 
+  1073 ;;		 -> main@serialBuffer(40), userPassword(40), 
+  1074 ;;  r               1    5[COMMON] char 
+  1075 ;; Return value:  Size  Location     Type
+  1076 ;;                  2    0[COMMON] int 
+  1077 ;; Registers used:
+  1078 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath
+  1079 ;; Tracked objects:
+  1080 ;;		On entry : 0/0
+  1081 ;;		On exit  : 0/0
+  1082 ;;		Unchanged: 0/0
+  1083 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1084 ;;      Params:         2       0       0       0       0
+  1085 ;;      Locals:         2       0       0       0       0
+  1086 ;;      Temps:          3       0       0       0       0
+  1087 ;;      Totals:         7       0       0       0       0
+  1088 ;;Total ram usage:        7 bytes
+  1089 ;; Hardware stack levels used:    2
+  1090 ;; This function calls:
+  1091 ;;		Nothing
+  1092 ;; This function is called by:
+  1093 ;;		_createPassword
+  1094 ;;		_validatePassword
+  1095 ;; This function uses a non-reentrant model
+  1096 ;;
+  1097                           
+  1098                           
+  1099                           ;psect for function _strcmp
+  1100  06EB                     _strcmp:	
+  1101                           
+  1102                           ;incstack = 0
+  1103                           ; Regs used in _strcmp: [wreg-fsr0h+status,2+status,0+btemp+1+pclath]
+  1104                           ;strcmp@s1 stored from wreg
+  1105  06EB  00F6               	movwf	strcmp@s1
+  1106  06EC                     l793:	
+  1107  06EC  2EF7               	goto	l797
+  1108  06ED                     l795:	
+  1109  06ED  3001               	movlw	1
+  1110  06EE  00F2               	movwf	??_strcmp
+  1111  06EF  0872               	movf	??_strcmp,w
+  1112  06F0  07F6               	addwf	strcmp@s1,f
+  1113  06F1  3001               	movlw	1
+  1114  06F2  07F0               	addwf	strcmp@s2,f
+  1115  06F3  1803               	skipnc
+  1116  06F4  0AF1               	incf	strcmp@s2+1,f
+  1117  06F5  3000               	movlw	0
+  1118  06F6  07F1               	addwf	strcmp@s2+1,f
+  1119  06F7                     l797:	
+  1120  06F7  0871               	movf	strcmp@s2+1,w
+  1121  06F8  1283               	bcf	3,5	;RP0=0, select bank0
+  1122  06F9  1303               	bcf	3,6	;RP1=0, select bank0
+  1123  06FA  00FF               	movwf	btemp+1
+  1124  06FB  0870               	movf	strcmp@s2,w
+  1125  06FC  0084               	movwf	4
+  1126  06FD  120A  118A  2003  120A  118A  	fcall	stringtab
+  1127  0702  00F2               	movwf	??_strcmp
+  1128  0703  0876               	movf	strcmp@s1,w
+  1129  0704  0084               	movwf	4
+  1130  0705  1383               	bcf	3,7	;select IRP bank0
+  1131  0706  0800               	movf	0,w
+  1132  0707  00F3               	movwf	??_strcmp+1
+  1133  0708  0872               	movf	??_strcmp,w
+  1134  0709  0273               	subwf	??_strcmp+1,w
+  1135  070A  00F4               	movwf	??_strcmp+2
+  1136  070B  0874               	movf	??_strcmp+2,w
+  1137  070C  00F5               	movwf	strcmp@r
+  1138  070D  0875               	movf	strcmp@r,w
+  1139  070E  1D03               	btfss	3,2
+  1140  070F  2F11               	goto	u191
+  1141  0710  2F12               	goto	u190
+  1142  0711                     u191:	
+  1143  0711  2F19               	goto	l801
+  1144  0712                     u190:	
+  1145  0712                     l799:	
+  1146  0712  0876               	movf	strcmp@s1,w
+  1147  0713  0084               	movwf	4
+  1148  0714  0800               	movf	0,w
+  1149  0715  1D03               	btfss	3,2
+  1150  0716  2F18               	goto	u201
+  1151  0717  2F19               	goto	u200
+  1152  0718                     u201:	
+  1153  0718  2EED               	goto	l795
+  1154  0719                     u200:	
+  1155  0719                     l801:	
+  1156  0719  0875               	movf	strcmp@r,w
+  1157  071A  00F0               	movwf	?_strcmp
+  1158  071B  01F1               	clrf	?_strcmp+1
+  1159  071C  1BF0               	btfsc	?_strcmp,7
+  1160  071D  03F1               	decf	?_strcmp+1,f
+  1161  071E                     l603:	
+  1162  071E  0008               	return
+  1163  071F                     __end_of_strcmp:	
+  1164                           
+  1165                           	psect	text5
+  1166  06B7                     __ptext5:	
+  1167 ;; *************** function _readMessage *****************
+  1168 ;; Defined at:
+  1169 ;;		line 59 in file "serialPwdCreateOpt.c"
+  1170 ;; Parameters:    Size  Location     Type
+  1171 ;;  message         1    wreg     PTR unsigned char 
+  1172 ;;		 -> main@serialBuffer(40), userPassword(40), 
+  1173 ;; Auto vars:     Size  Location     Type
+  1174 ;;  message         1   13[COMMON] PTR unsigned char 
+  1175 ;;		 -> main@serialBuffer(40), userPassword(40), 
+  1176 ;;  i               2   11[COMMON] int 
+  1177 ;; Return value:  Size  Location     Type
+  1178 ;;                  1    wreg      void 
+  1179 ;; Registers used:
+  1180 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1181 ;; Tracked objects:
+  1182 ;;		On entry : 0/0
+  1183 ;;		On exit  : 0/0
+  1184 ;;		Unchanged: 0/0
+  1185 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1186 ;;      Params:         0       0       0       0       0
+  1187 ;;      Locals:         3       0       0       0       0
+  1188 ;;      Temps:          2       0       0       0       0
+  1189 ;;      Totals:         5       0       0       0       0
+  1190 ;;Total ram usage:        5 bytes
+  1191 ;; Hardware stack levels used:    1
+  1192 ;; Hardware stack levels required when called:    2
+  1193 ;; This function calls:
+  1194 ;;		_printMessage
+  1195 ;;		_receiveCharacter
+  1196 ;; This function is called by:
+  1197 ;;		_createPassword
+  1198 ;;		_main
+  1199 ;; This function uses a non-reentrant model
+  1200 ;;
+  1201                           
+  1202                           
+  1203                           ;psect for function _readMessage
+  1204  06B7                     _readMessage:	
+  1205                           
+  1206                           ;incstack = 0
+  1207                           ; Regs used in _readMessage: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1208                           ;readMessage@message stored from wreg
+  1209  06B7  00FD               	movwf	readMessage@message
+  1210  06B8                     l771:	
+  1211                           
+  1212                           ;serialPwdCreateOpt.c: 61:     for (int i = 0;; i++) {
+  1213  06B8  01FB               	clrf	readMessage@i
+  1214  06B9  01FC               	clrf	readMessage@i+1
+  1215  06BA                     l773:	
+  1216                           
+  1217                           ;serialPwdCreateOpt.c: 62:         message[i] = receiveCharacter();
+  1218  06BA  120A  118A  2625  120A  118A  	fcall	_receiveCharacter
+  1219  06BF  00F9               	movwf	??_readMessage
+  1220  06C0  087B               	movf	readMessage@i,w
+  1221  06C1  077D               	addwf	readMessage@message,w
+  1222  06C2  00FA               	movwf	??_readMessage+1
+  1223  06C3  087A               	movf	??_readMessage+1,w
+  1224  06C4  0084               	movwf	4
+  1225  06C5  0879               	movf	??_readMessage,w
+  1226  06C6  1383               	bcf	3,7	;select IRP bank0
+  1227  06C7  0080               	movwf	0
+  1228  06C8                     l775:	
+  1229                           
+  1230                           ;serialPwdCreateOpt.c: 63:         if (message[i] == '\r') {
+  1231  06C8  087B               	movf	readMessage@i,w
+  1232  06C9  077D               	addwf	readMessage@message,w
+  1233  06CA  00F9               	movwf	??_readMessage
+  1234  06CB  0879               	movf	??_readMessage,w
+  1235  06CC  0084               	movwf	4
+  1236  06CD  300D               	movlw	13
+  1237  06CE  0600               	xorwf	0,w
+  1238  06CF  1D03               	btfss	3,2
+  1239  06D0  2ED2               	goto	u171
+  1240  06D1  2ED3               	goto	u170
+  1241  06D2                     u171:	
+  1242  06D2  2EDA               	goto	l779
+  1243  06D3                     u170:	
+  1244  06D3                     l777:	
+  1245                           
+  1246                           ;serialPwdCreateOpt.c: 64:             message[i] = '\0';
+  1247  06D3  087B               	movf	readMessage@i,w
+  1248  06D4  077D               	addwf	readMessage@message,w
+  1249  06D5  00F9               	movwf	??_readMessage
+  1250  06D6  0879               	movf	??_readMessage,w
+  1251  06D7  0084               	movwf	4
+  1252  06D8  0180               	clrf	0
+  1253                           
+  1254                           ;serialPwdCreateOpt.c: 65:             break;
+  1255  06D9  2EEA               	goto	l46
+  1256  06DA                     l779:	
+  1257                           
+  1258                           ;serialPwdCreateOpt.c: 67:         printMessage("*");
+  1259  06DA  30E7               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
+  1260  06DB  00F5               	movwf	printMessage@message
+  1261  06DC  3080               	movlw	128
+  1262  06DD  00F6               	movwf	printMessage@message+1
+  1263  06DE  120A  118A  2685  120A  118A  	fcall	_printMessage
+  1264  06E3                     l781:	
+  1265                           
+  1266                           ;serialPwdCreateOpt.c: 68:     }
+  1267  06E3  3001               	movlw	1
+  1268  06E4  07FB               	addwf	readMessage@i,f
+  1269  06E5  1803               	skipnc
+  1270  06E6  0AFC               	incf	readMessage@i+1,f
+  1271  06E7  3000               	movlw	0
+  1272  06E8  07FC               	addwf	readMessage@i+1,f
+  1273  06E9  2EBA               	goto	l773
+  1274  06EA                     l46:	
+  1275  06EA  0008               	return
+  1276  06EB                     __end_of_readMessage:	
+  1277                           
+  1278                           	psect	text6
+  1279  0625                     __ptext6:	
+  1280 ;; *************** function _receiveCharacter *****************
+  1281 ;; Defined at:
+  1282 ;;		line 52 in file "serialPwdCreateOpt.c"
+  1283 ;; Parameters:    Size  Location     Type
+  1284 ;;		None
+  1285 ;; Auto vars:     Size  Location     Type
+  1286 ;;		None
+  1287 ;; Return value:  Size  Location     Type
+  1288 ;;                  1    wreg      unsigned char 
+  1289 ;; Registers used:
+  1290 ;;		wreg
+  1291 ;; Tracked objects:
+  1292 ;;		On entry : 0/0
+  1293 ;;		On exit  : 0/0
+  1294 ;;		Unchanged: 0/0
+  1295 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1296 ;;      Params:         0       0       0       0       0
+  1297 ;;      Locals:         0       0       0       0       0
+  1298 ;;      Temps:          0       0       0       0       0
+  1299 ;;      Totals:         0       0       0       0       0
+  1300 ;;Total ram usage:        0 bytes
+  1301 ;; Hardware stack levels used:    1
+  1302 ;; This function calls:
+  1303 ;;		Nothing
+  1304 ;; This function is called by:
+  1305 ;;		_readMessage
+  1306 ;; This function uses a non-reentrant model
+  1307 ;;
+  1308                           
+  1309                           
+  1310                           ;psect for function _receiveCharacter
+  1311  0625                     _receiveCharacter:	
+  1312  0625                     l765:	
+  1313                           ;incstack = 0
+  1314                           ; Regs used in _receiveCharacter: [wreg]
+  1315                           
+  1316  0625                     l37:	
+  1317                           ;serialPwdCreateOpt.c: 54:     while (RCIF == 0);
+  1318                           
+  1319  0625  1283               	bcf	3,5	;RP0=0, select bank0
+  1320  0626  1303               	bcf	3,6	;RP1=0, select bank0
+  1321  0627  1E8C               	btfss	12,5	;volatile
+  1322  0628  2E2A               	goto	u161
+  1323  0629  2E2B               	goto	u160
+  1324  062A                     u161:	
+  1325  062A  2E25               	goto	l37
+  1326  062B                     u160:	
+  1327  062B                     l767:	
+  1328                           
+  1329                           ;serialPwdCreateOpt.c: 55:     return RCREG;
+  1330  062B  081A               	movf	26,w	;volatile
+  1331  062C                     l40:	
+  1332  062C  0008               	return
+  1333  062D                     __end_of_receiveCharacter:	
+  1334                           
+  1335                           	psect	text7
+  1336  0685                     __ptext7:	
+  1337 ;; *************** function _printMessage *****************
+  1338 ;; Defined at:
+  1339 ;;		line 43 in file "serialPwdCreateOpt.c"
+  1340 ;; Parameters:    Size  Location     Type
+  1341 ;;  message         2    5[COMMON] PTR unsigned char 
+  1342 ;;		 -> STR_14(19), STR_13(28), STR_12(32), STR_11(28), 
+  1343 ;;		 -> STR_10(32), STR_6(17), RAM(512), STR_5(14), 
+  1344 ;;		 -> STR_4(51), STR_3(39), STR_2(23), STR_1(2), 
+  1345 ;; Auto vars:     Size  Location     Type
+  1346 ;;  i               2    7[COMMON] int 
+  1347 ;; Return value:  Size  Location     Type
+  1348 ;;                  1    wreg      void 
+  1349 ;; Registers used:
+  1350 ;;		wreg, fsr0l, fsr0h, status,2, btemp+1, pclath
+  1351 ;; Tracked objects:
+  1352 ;;		On entry : 0/0
+  1353 ;;		On exit  : 0/0
+  1354 ;;		Unchanged: 0/0
+  1355 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1356 ;;      Params:         2       0       0       0       0
+  1357 ;;      Locals:         2       0       0       0       0
+  1358 ;;      Temps:          0       0       0       0       0
+  1359 ;;      Totals:         4       0       0       0       0
+  1360 ;;Total ram usage:        4 bytes
+  1361 ;; Hardware stack levels used:    2
+  1362 ;; This function calls:
+  1363 ;;		Nothing
+  1364 ;; This function is called by:
+  1365 ;;		_readMessage
+  1366 ;;		_createPassword
+  1367 ;;		_validatePassword
+  1368 ;;		_main
+  1369 ;; This function uses a non-reentrant model
+  1370 ;;
+  1371                           
+  1372                           
+  1373                           ;psect for function _printMessage
+  1374  0685                     _printMessage:	
+  1375  0685                     l757:	
+  1376                           ;incstack = 0
+  1377                           ; Regs used in _printMessage: [wreg-fsr0h+status,2+btemp+1+pclath]
+  1378                           
+  1379                           
+  1380                           ;serialPwdCreateOpt.c: 45:     for (int i = 0; message[i] != '\0'; i++) {
+  1381  0685  01F7               	clrf	printMessage@i
+  1382  0686  01F8               	clrf	printMessage@i+1
+  1383  0687  2EA2               	goto	l763
+  1384  0688                     l759:	
+  1385                           
+  1386                           ;serialPwdCreateOpt.c: 46:         TXREG = message[i];
+  1387  0688  0877               	movf	printMessage@i,w
+  1388  0689  0775               	addwf	printMessage@message,w
+  1389  068A  0084               	movwf	4
+  1390  068B  0878               	movf	printMessage@i+1,w
+  1391  068C  1803               	skipnc
+  1392  068D  0A78               	incf	printMessage@i+1,w
+  1393  068E  0776               	addwf	printMessage@message+1,w
+  1394  068F  00FF               	movwf	btemp+1
+  1395  0690  120A  118A  2003  120A  118A  	fcall	stringtab
+  1396  0695  0099               	movwf	25	;volatile
+  1397  0696                     l30:	
+  1398                           ;serialPwdCreateOpt.c: 47:         while (TRMT == 0);
+  1399                           
+  1400  0696  1683               	bsf	3,5	;RP0=1, select bank1
+  1401  0697  1303               	bcf	3,6	;RP1=0, select bank1
+  1402  0698  1C98               	btfss	24,1	;volatile
+  1403  0699  2E9B               	goto	u141
+  1404  069A  2E9C               	goto	u140
+  1405  069B                     u141:	
+  1406  069B  2E96               	goto	l30
+  1407  069C                     u140:	
+  1408  069C                     l761:	
+  1409                           
+  1410                           ;serialPwdCreateOpt.c: 48:     }
+  1411  069C  3001               	movlw	1
+  1412  069D  07F7               	addwf	printMessage@i,f
+  1413  069E  1803               	skipnc
+  1414  069F  0AF8               	incf	printMessage@i+1,f
+  1415  06A0  3000               	movlw	0
+  1416  06A1  07F8               	addwf	printMessage@i+1,f
+  1417  06A2                     l763:	
+  1418  06A2  0877               	movf	printMessage@i,w
+  1419  06A3  0775               	addwf	printMessage@message,w
+  1420  06A4  0084               	movwf	4
+  1421  06A5  0878               	movf	printMessage@i+1,w
+  1422  06A6  1803               	skipnc
+  1423  06A7  0A78               	incf	printMessage@i+1,w
+  1424  06A8  0776               	addwf	printMessage@message+1,w
+  1425  06A9  1283               	bcf	3,5	;RP0=0, select bank0
+  1426  06AA  1303               	bcf	3,6	;RP1=0, select bank0
+  1427  06AB  00FF               	movwf	btemp+1
+  1428  06AC  120A  118A  2003  120A  118A  	fcall	stringtab
+  1429  06B1  3A00               	xorlw	0
+  1430  06B2  1D03               	skipz
+  1431  06B3  2EB5               	goto	u151
+  1432  06B4  2EB6               	goto	u150
+  1433  06B5                     u151:	
+  1434  06B5  2E88               	goto	l759
+  1435  06B6                     u150:	
+  1436  06B6                     l34:	
+  1437  06B6  0008               	return
+  1438  06B7                     __end_of_printMessage:	
+  1439                           
+  1440                           	psect	text8
+  1441  0635                     __ptext8:	
+  1442 ;; *************** function _configRegistres *****************
+  1443 ;; Defined at:
+  1444 ;;		line 35 in file "serialPwdCreateOpt.c"
+  1445 ;; Parameters:    Size  Location     Type
+  1446 ;;		None
+  1447 ;; Auto vars:     Size  Location     Type
+  1448 ;;		None
+  1449 ;; Return value:  Size  Location     Type
+  1450 ;;                  1    wreg      void 
+  1451 ;; Registers used:
+  1452 ;;		wreg
+  1453 ;; Tracked objects:
+  1454 ;;		On entry : 0/0
+  1455 ;;		On exit  : 0/0
+  1456 ;;		Unchanged: 0/0
+  1457 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1458 ;;      Params:         0       0       0       0       0
+  1459 ;;      Locals:         0       0       0       0       0
+  1460 ;;      Temps:          0       0       0       0       0
+  1461 ;;      Totals:         0       0       0       0       0
+  1462 ;;Total ram usage:        0 bytes
+  1463 ;; Hardware stack levels used:    1
+  1464 ;; This function calls:
+  1465 ;;		Nothing
+  1466 ;; This function is called by:
+  1467 ;;		_main
+  1468 ;; This function uses a non-reentrant model
+  1469 ;;
+  1470                           
+  1471                           
+  1472                           ;psect for function _configRegistres
+  1473  0635                     _configRegistres:	
+  1474  0635                     l805:	
+  1475                           ;incstack = 0
+  1476                           ; Regs used in _configRegistres: [wreg]
+  1477                           
+  1478                           
+  1479                           ;serialPwdCreateOpt.c: 37:     TXSTA = 0x24;
+  1480  0635  3024               	movlw	36
+  1481  0636  1683               	bsf	3,5	;RP0=1, select bank1
+  1482  0637  1303               	bcf	3,6	;RP1=0, select bank1
+  1483  0638  0098               	movwf	24	;volatile
+  1484                           
+  1485                           ;serialPwdCreateOpt.c: 38:     RCSTA = 0x90;
+  1486  0639  3090               	movlw	144
+  1487  063A  1283               	bcf	3,5	;RP0=0, select bank0
+  1488  063B  1303               	bcf	3,6	;RP1=0, select bank0
+  1489  063C  0098               	movwf	24	;volatile
+  1490                           
+  1491                           ;serialPwdCreateOpt.c: 39:     SPBRG = 25;
+  1492  063D  3019               	movlw	25
+  1493  063E  1683               	bsf	3,5	;RP0=1, select bank1
+  1494  063F  1303               	bcf	3,6	;RP1=0, select bank1
+  1495  0640  0099               	movwf	25	;volatile
+  1496  0641                     l25:	
+  1497  0641  0008               	return
+  1498  0642                     __end_of_configRegistres:	
+  1499  007E                     btemp	set	126	;btemp
+  1500  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     232
+    Constant    0
+    Data        0
+    BSS         42
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80     40      42
+    BANK1            80      0      40
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    strlen@s	PTR const unsigned char  size(1) Largest target is 80
+		 -> userPassword(BANK1[40]), 
+
+    strlen@cp	PTR const unsigned char  size(1) Largest target is 80
+		 -> userPassword(BANK1[40]), 
+
+    strcmp@s2	PTR const unsigned char  size(2) Largest target is 80
+		 -> STR_9(CODE[1]), STR_7(CODE[7]), NULL(NULL[0]), userPassword(BANK1[40]), 
+
+    strcmp@s1	PTR const unsigned char  size(1) Largest target is 80
+		 -> main@serialBuffer(BANK0[40]), userPassword(BANK1[40]), 
+
+    main@serialBuffer	PTR unsigned char [40] size(1) Largest target is 0
+
+    validatePassword@password	PTR unsigned char  size(1) Largest target is 80
+		 -> main@serialBuffer(BANK0[40]), 
+
+    validatePassword@stockPassword	PTR unsigned char  size(1) Largest target is 7
+		 -> STR_7(CODE[7]), 
+
+    userPassword	PTR unsigned char [40] size(1) Largest target is 0
+
+    readMessage@message	PTR unsigned char  size(1) Largest target is 80
+		 -> main@serialBuffer(BANK0[40]), userPassword(BANK1[40]), 
+
+    printMessage@message	PTR unsigned char  size(2) Largest target is 512
+		 -> STR_14(CODE[19]), STR_13(CODE[28]), STR_12(CODE[32]), STR_11(CODE[28]), 
+		 -> STR_10(CODE[32]), STR_6(CODE[17]), RAM(DATA[512]), STR_5(CODE[14]), 
+		 -> STR_4(CODE[51]), STR_3(CODE[39]), STR_2(CODE[23]), STR_1(CODE[2]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_readMessage
+    _validatePassword->_printMessage
+    _createPassword->_readMessage
+    _readMessage->_printMessage
+    _printMessage->_strlen
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                40    40      0    7151
+                                              0 BANK0     40    40      0
+                    _configRegistres
+                     _createPassword
+                       _printMessage
+                        _readMessage
+                   _validatePassword
+ ---------------------------------------------------------------------------------
+ (1) _validatePassword                                     3     3      0    1705
+                                              9 COMMON     3     3      0
+                       _printMessage
+                             _strcmp
+ ---------------------------------------------------------------------------------
+ (1) _createPassword                                       0     0      0    3039
+                       _printMessage
+                        _readMessage
+                             _strcmp
+                             _strlen
+ ---------------------------------------------------------------------------------
+ (2) _strlen                                               5     3      2     156
+                                              0 COMMON     5     3      2
+ ---------------------------------------------------------------------------------
+ (3) _strcmp                                               7     5      2     527
+                                              0 COMMON     7     5      2
+ ---------------------------------------------------------------------------------
+ (1) _readMessage                                          5     5      0    1278
+                                              9 COMMON     5     5      0
+                       _printMessage
+                   _receiveCharacter
+ ---------------------------------------------------------------------------------
+ (2) _receiveCharacter                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _printMessage                                         4     2      2    1078
+                                              5 COMMON     4     2      2
+                             _strlen (ARG)
+ ---------------------------------------------------------------------------------
+ (1) _configRegistres                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _configRegistres
+   _createPassword
+     _printMessage
+       _strlen (ARG)
+     _readMessage
+       _printMessage
+         _strlen (ARG)
+       _receiveCharacter
+     _strcmp
+     _strlen
+   _printMessage
+     _strlen (ARG)
+   _readMessage
+     _printMessage
+       _strlen (ARG)
+     _receiveCharacter
+   _validatePassword
+     _printMessage
+       _strlen (ARG)
+     _strcmp
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      E       E       1      100.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      60       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50     28      2A       5       52.5%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0      28       7       50.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0      60      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Wed May 28 19:55:59 2025
+
+                            pc 0002                    __CFG_CP$OFF 0000                             l30 0696  
+                           l40 062C                             l25 0641                             l34 06B6  
+                           l52 07EE                             l37 0625                             l61 077D  
+                           l46 06EA                             l49 07C2                             l66 066D  
+                           l67 0682                             fsr 0004                    __CFG_LVP$ON 0000  
+                          l603 071E                            l801 0719                            l609 065A  
+                          l811 07A9                            l805 0635                            l813 07AF  
+                          l821 0734                            l815 07B9                            l807 077E  
+                          l831 0774                            l823 0746                            l761 069C  
+                          l809 078A                            l825 0750                            l817 0720  
+                          l833 065B                            l763 06A2                            l771 06B8  
+                          l827 075A                            l819 0724                            l835 0660  
+                          l757 0685                            l765 0625                            l781 06E3  
+                          l773 06BA                            l829 076A                            l837 0668  
+                          l759 0688                            l767 062B                            l775 06C8  
+                          l783 0643                            l777 06D3                            l793 06EC  
+                          l785 0648                            l779 06DA                            l795 06ED  
+                          l787 064C                            l797 06F7                            l789 0654  
+                          l799 0712                            u200 0719                            u201 0718  
+                          u210 078A                            u211 0789                            u140 069C  
+                          u220 07A9                            u141 069B                            u221 07A8  
+                          u150 06B6                            u230 0734                            u151 06B5  
+                          u231 0733                            u160 062B                            u240 0746  
+                          u161 062A                            u241 0745                            u170 06D3  
+                          u250 076A                            u171 06D2                            u251 0769  
+                          u180 0654                            u260 0668                            u181 0653  
+                          u261 0667                            u190 0712                            u191 0711  
+                 __CFG_CPD$OFF 0000                            fsr0 0004                            indf 0000  
+                         STR_1 00F9                           STR_2 00A9                           STR_3 0046  
+                         STR_4 0013                           STR_5 00E4                           STR_6 00D3  
+                         STR_7 00F2                           STR_9 00D2                           _RCIF 0065  
+                         _TRMT 04C1                   __CFG_WRT$OFF 0000                           _main 065B  
+                         btemp 007E                  __CFG_BOREN$ON 0000                  printMessage@i 0077  
+                         start 0000                   _userPassword 00A0                   ?_readMessage 0070  
+                        ?_main 0070                          STR_10 006D                          STR_11 008D  
+                        STR_12 006D                          STR_13 008D                          STR_14 00C0  
+                __CFG_WDTE$OFF 0000                          _RCREG 001A                          _RCSTA 0018  
+                        _SPBRG 0099                          _TXREG 0019                          _TXSTA 0098  
+             ??_createPassword 007E                          pclath 000A                          status 0003  
+                        wtemp0 007E                __initialization 07EF                   __end_of_main 0685  
+                       ??_main 007E              ?_validatePassword 0070             ??_validatePassword 0079  
+               __CFG_PWRTE$OFF 0000      __size_of_receiveCharacter 0008                         _strcmp 06EB  
+                       _strlen 0642       __size_of_configRegistres 000D                __CFG_FOSC$EXTRC 0000  
+      __end_of__initialization 07FC                 __pcstackCOMMON 0070           __size_of_readMessage 0034  
+                   __pbssBANK0 0048                     __pbssBANK1 00A0                     __pmaintext 065B  
+                      ?_strcmp 0070                        ?_strlen 0070  validatePassword@stockPassword 007A  
+                   __stringtab 0003              ??_configRegistres 0070               _receiveCharacter 0625  
+                 readMessage@i 007B                        __ptext1 071F                        __ptext2 077E  
+                      __ptext3 0642                        __ptext4 06EB                        __ptext5 06B7  
+                      __ptext6 0625                        __ptext7 0685                        __ptext8 0635  
+              __size_of_strcmp 0034                __size_of_strlen 0019                        clrloop0 062E  
+         end_of_initialization 07FC      __size_of_validatePassword 005F                  ?_printMessage 0075  
+                      strcmp@r 0075                        strlen@s 0074        __size_of_createPassword 0071  
+     validatePassword@password 007B                 ??_printMessage 0077                 __end_of_strcmp 071F  
+               __end_of_strlen 065B            start_initialization 07EF                  ??_readMessage 0079  
+                     ??_strcmp 0072                       ??_strlen 0072             readMessage@message 007D  
+                    ___latbits 0002                  __pcstackBANK0 0020       __end_of_receiveCharacter 062D  
+              _configRegistres 0635               _validatePassword 071F                      __pstrings 0003  
+          __end_of_readMessage 06EB           __end_of_printMessage 06B7                 _createPassword 077E  
+             main@serialBuffer 0020                      clear_ram0 062D                      _resetMode 0048  
+          printMessage@message 0075                    __stringbase 0012        __end_of_configRegistres 0642  
+       __end_of_createPassword 07EF                    _readMessage 06B7             __end_of__stringtab 0013  
+              ?_createPassword 0070                  __size_of_main 002A               ?_configRegistres 0070  
+        __size_of_printMessage 0032              ?_receiveCharacter 0070       __end_of_validatePassword 077E  
+           ??_receiveCharacter 0070                      stringcode 000D                   _printMessage 0685  
+                     strcmp@s1 0076                       strcmp@s2 0070                       strlen@cp 0073  
+                     stringdir 000D                       stringtab 0003  

@@ -1,0 +1,81 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F876A ]
+[d frameptr 0 ]
+"10 D:\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"24 D:\QuestCPP\repo\qis_ades\PIC16F876A\14-spi.X\spi.c
+[v _uart_init uart_init `(v  1 e 1 0 ]
+"31
+[v _uart_receive uart_receive `(uc  1 e 1 0 ]
+"42
+[v _spi_master_init spi_master_init `(v  1 e 1 0 ]
+"50
+[v _send_to_spi send_to_spi `(v  1 e 1 0 ]
+"58
+[v _main main `(v  1 e 1 0 ]
+"278 D:\pic\include\pic16f876a.h
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"708
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"715
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"864
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+"959
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"966
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1337
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1605
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"1774
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"1855
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2500
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2548
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"2707
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"58 D:\QuestCPP\repo\qis_ades\PIC16F876A\14-spi.X\spi.c
+[v _main main `(v  1 e 1 0 ]
+{
+"73
+[v main@uartBuffer uartBuffer `uc  1 a 1 4 ]
+"78
+} 0
+"31
+[v _uart_receive uart_receive `(uc  1 e 1 0 ]
+{
+"33
+[v uart_receive@ch ch `uc  1 a 1 1 ]
+"40
+} 0
+"24
+[v _uart_init uart_init `(v  1 e 1 0 ]
+{
+"29
+} 0
+"42
+[v _spi_master_init spi_master_init `(v  1 e 1 0 ]
+{
+"48
+} 0
+"50
+[v _send_to_spi send_to_spi `(v  1 e 1 0 ]
+{
+[v send_to_spi@ch ch `uc  1 a 1 wreg ]
+[v send_to_spi@ch ch `uc  1 a 1 wreg ]
+[v send_to_spi@ch ch `uc  1 a 1 2 ]
+"55
+} 0

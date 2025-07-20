@@ -1,0 +1,36 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F876A ]
+[d frameptr 0 ]
+"10 D:\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"19 D:\QuestCPP\repo\qis_ades\PIC16F876A\1-blink.X\led1.c
+[v _main main `(v  1 e 1 0 ]
+"166 D:\pic\include\pic16f876a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"216
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"278
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"1225
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1275
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1337
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"2004
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"19 D:\QuestCPP\repo\qis_ades\PIC16F876A\1-blink.X\led1.c
+[v _main main `(v  1 e 1 0 ]
+{
+"77
+[v main@i i `i  1 a 2 2 ]
+"104
+} 0

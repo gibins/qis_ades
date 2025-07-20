@@ -31,10 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="loop2.h" />
 		<Unit filename="loops.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="pgm_01032025.h" />
+		<Unit filename="pgm_28022025.h" />
 		<Unit filename="template.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

@@ -1,0 +1,49 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F876A ]
+[d frameptr 0 ]
+"10 D:\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"27 D:\QuestCPP\repo\qis_ades\PIC16F876A\4-serialUART.X\serial.c
+[v _main main `(v  1 e 1 0 ]
+"79
+[v _print print `(v  1 e 1 0 ]
+"99
+[v _receive receive `(uc  1 e 1 0 ]
+"864 D:\pic\include\pic16f876a.h
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+"959
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"966
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1774
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"1855
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2500
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2707
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"27 D:\QuestCPP\repo\qis_ades\PIC16F876A\4-serialUART.X\serial.c
+[v _main main `(v  1 e 1 0 ]
+{
+"77
+} 0
+"79
+[v _print print `(v  1 e 1 0 ]
+{
+[v print@message message `*.24uc  1 a 1 wreg ]
+"80
+[v print@i i `i  1 a 2 2 ]
+"79
+[v print@message message `*.24uc  1 a 1 wreg ]
+[v print@message message `*.24uc  1 a 1 4 ]
+"86
+} 0

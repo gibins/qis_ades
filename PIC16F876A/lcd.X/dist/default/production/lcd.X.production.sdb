@@ -1,0 +1,84 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F876A ]
+[d frameptr 0 ]
+"10 D:\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"57 D:\QuestCPP\repo\qis_ades\PIC16F876A\lcd.X\lcd.c
+[v _Forbit_init Forbit_init `(v  1 e 1 0 ]
+"66
+[v _lcd_enable lcd_enable `(v  1 e 1 0 ]
+"73
+[v _print print `(v  1 e 1 0 ]
+"86
+[v _main main `(v  1 e 1 0 ]
+"107
+[v _Fourbitcmd Fourbitcmd `(v  1 e 1 0 ]
+"121
+[v _Forbitdata Forbitdata `(v  1 e 1 0 ]
+"216 D:\pic\include\pic16f876a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"278
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"1275
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1337
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"2431
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"2434
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"2437
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"86 D:\QuestCPP\repo\qis_ades\PIC16F876A\lcd.X\lcd.c
+[v _main main `(v  1 e 1 0 ]
+{
+"104
+} 0
+"73
+[v _print print `(v  1 e 1 0 ]
+{
+[v print@data data `*.24uc  1 a 1 wreg ]
+"75
+[v print@i i `i  1 a 2 5 ]
+"73
+[v print@data data `*.24uc  1 a 1 wreg ]
+"75
+[v print@data data `*.24uc  1 a 1 7 ]
+"84
+} 0
+"121
+[v _Forbitdata Forbitdata `(v  1 e 1 0 ]
+{
+[v Forbitdata@b b `uc  1 a 1 wreg ]
+[v Forbitdata@b b `uc  1 a 1 wreg ]
+"123
+[v Forbitdata@b b `uc  1 a 1 4 ]
+"135
+} 0
+"57
+[v _Forbit_init Forbit_init `(v  1 e 1 0 ]
+{
+"64
+} 0
+"107
+[v _Fourbitcmd Fourbitcmd `(v  1 e 1 0 ]
+{
+[v Fourbitcmd@a a `uc  1 a 1 wreg ]
+[v Fourbitcmd@a a `uc  1 a 1 wreg ]
+"109
+[v Fourbitcmd@a a `uc  1 a 1 4 ]
+"119
+} 0
+"66
+[v _lcd_enable lcd_enable `(v  1 e 1 0 ]
+{
+"70
+} 0
